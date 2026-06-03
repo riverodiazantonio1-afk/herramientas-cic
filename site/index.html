@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herramientas CIC | Inicio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="home">
+  <header class="site-header">
+    <div class="brand-bar">
+      <a class="brand" href="index.html">
+        <img src="assets/img/becat-rojo-logo.png" alt="BeCaT">
+        <div>
+          <strong>Herramientas CIC</strong>
+          <span>Catequesis de Iniciación Cristiana en Familia</span>
+        </div>
+      </a>
+    </div>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="index.html" class="active">Inicio</a><a href="herramientas/herramienta-01.html">Tema 1</a><a href="herramientas/herramienta-02.html">Tema 2</a><a href="herramientas/herramienta-03.html">Tema 3</a><a href="herramientas/herramienta-04.html">Tema 4</a><a href="herramientas/herramienta-05.html">Tema 5</a><a href="herramientas/herramienta-06.html">Tema 6</a><a href="herramientas/herramienta-07.html">Tema 7</a><a href="herramientas/herramienta-08.html">Tema 8</a>
+    </nav>
+    <div class="site-nav-mobile">
+      <label class="site-nav-mobile-label" for="nav-select">Ir a una herramienta</label>
+      <select id="nav-select" class="site-nav-select" aria-label="Elegir herramienta o sección">
+        <option value="index.html" selected>Inicio</option><option value="herramientas/herramienta-01.html">Tema 1</option><option value="herramientas/herramienta-02.html">Tema 2</option><option value="herramientas/herramienta-03.html">Tema 3</option><option value="herramientas/herramienta-04.html">Tema 4</option><option value="herramientas/herramienta-05.html">Tema 5</option><option value="herramientas/herramienta-06.html">Tema 6</option><option value="herramientas/herramienta-07.html">Tema 7</option><option value="herramientas/herramienta-08.html">Tema 8</option>
+      </select>
+    </div>
+  </header>
+  
+    <section class="hero hero-home">
+      <div class="hero-copy">
+        <p class="eyebrow">Curso CIC en familia</p>
+        <h1>Bienvenida a las herramientas de Catequesis de Iniciación Cristiana en familia</h1>
+        <p class="lead">Este espacio reúne herramientas prácticas para catequistas, responsables de catequesis, párrocos y otros agentes pastorales. Cada propuesta busca ayudarte a comprender mejor el tema trabajado y a traducirlo en pasos concretos para tu realidad pastoral.</p>
+      </div>
+      <div class="hero-panel">
+        <p><strong>Cómo están pensadas</strong></p>
+        <ul class="hero-list">
+          <li>Se pueden realizar en equipo o en solitario</li>
+          <li>Comienzan por un momento de oración y discernimiento</li>
+          <li>Buscan un resultado práctico y aplicable al terminar</li>
+        </ul>
+      </div>
+    </section>
+    
+  <main class="main-content">
+    
+    <section class="intro-grid intro-grid-home">
+      <article class="intro-block">
+        <h2>Para qué sirve este conjunto</h2>
+        <p>Las herramientas están pensadas para afianzar los conceptos clave de cada tema y ayudar a aplicarlos en la vida concreta de la parroquia, el arciprestazgo, el colegio o el equipo pastoral.</p>
+      </article>
+      <article class="intro-block">
+        <h2>Cómo usarlo bien</h2>
+        <p>Abre la herramienta del tema correspondiente, recorre sus pasos con calma y termina concretando un siguiente paso realista. Lo importante no es solo reflexionar, sino saber qué hacer después.</p>
+      </article>
+      <article class="intro-block">
+        <h2>Clave pastoral común</h2>
+        <p>Todas las propuestas quieren sostener una mirada cercana, clara y pastoral, sin tecnicismos innecesarios, y con espacio para la oración, la revisión honesta y la toma de decisiones.</p>
+      </article>
+    </section>
+    
+  </main>
+  <footer class="site-footer">
+    <p>Proyecto pastoral BeCaT · Mini-sitio de herramientas para catequesis en familia</p>
+  </footer>
+  <script>
+    const navSelect = document.getElementById("nav-select");
+    if (navSelect) {
+      navSelect.addEventListener("change", (event) => {
+        const target = event.target.value;
+        if (target) {
+          window.location.href = target;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
