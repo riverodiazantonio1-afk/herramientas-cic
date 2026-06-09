@@ -13,7 +13,7 @@
   <header class="site-header">
     <div class="brand-bar">
       <a class="brand" href="index.html">
-        <img src="assets/img/becat-rojo-logo.png" alt="#BeCaT">
+        <img src="assets/img/becat-rojo-logo.png" alt="BeCaT">
         <div>
           <strong>Herramientas CIC</strong>
           <span>Catequesis de Iniciación Cristiana en Familia</span>
@@ -49,6 +49,16 @@
     
   <main class="main-content">
     
+    <section class="intro-context">
+      <div class="intro-context-inner">
+        <p class="eyebrow">Herramientas prácticas para trabajar el curso</p>
+        <h2>Un apoyo para llevar el curso a la realidad pastoral</h2>
+        <p>Estas herramientas prácticas forman parte del curso <strong>Catequesis de Iniciación Cristiana en familia</strong> y están pensadas como un apoyo para llevar a la realidad pastoral lo que se trabaja en el aula. No sustituyen al curso completo ni pueden entenderse bien al margen de él: cada herramienta presupone el marco teológico, catequético y pastoral desarrollado en los temas, especialmente la necesidad de repensar la catequesis en un contexto donde la fe ya no puede darse por supuesta.</p>
+        <p>Su finalidad no es ofrecer recetas rápidas, sino ayudar a catequistas, responsables de catequesis, sacerdotes y equipos pastorales a mirar su situación concreta con más lucidez, discernir qué está ocurriendo y concretar pequeños pasos posibles. El curso ofrece el fundamento; las herramientas ayudan a trabajarlo, dialogarlo y aplicarlo.</p>
+        <p>Por eso conviene utilizarlas después de haber visto el tema correspondiente en <a href="https://aula.becat.online">aula.becat.online</a>. Solo así se comprende bien el sentido de cada actividad: pasar de la queja al discernimiento, de la intuición a la acción, y de una catequesis sostenida por inercias a una catequesis más misionera, familiar, comunitaria y realista.</p>
+        <p>Estas herramientas están pensadas para el trabajo personal o en equipo. Lo importante no es completarlas deprisa, sino dejar que ayuden a mirar la realidad con verdad y a dar un paso pastoral concreto, pequeño y revisable.</p>
+      </div>
+    </section>
     <section class="intro-grid intro-grid-home">
       <article class="intro-block">
         <h2>Para qué sirve este conjunto</h2>
@@ -66,7 +76,7 @@
     
   </main>
   <footer class="site-footer">
-    <p>Proyecto pastoral #BeCaT · Mini-sitio de herramientas para catequesis en familia</p>
+    <p>Proyecto pastoral BeCaT · Mini-sitio de herramientas para catequesis en familia</p>
   </footer>
   <script>
     const navSelect = document.getElementById("nav-select");
@@ -78,6 +88,20 @@
         }
       });
     }
+    const printButtons = document.querySelectorAll("[data-print-tool]");
+    printButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const originalTitle = document.title;
+        const pdfTitle = button.dataset.pdfTitle;
+        if (pdfTitle) {
+          document.title = pdfTitle;
+          window.addEventListener("afterprint", () => {
+            document.title = originalTitle;
+          }, { once: true });
+        }
+        window.print();
+      });
+    });
   </script>
 </body>
 </html>
