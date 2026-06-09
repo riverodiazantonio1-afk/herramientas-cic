@@ -13,7 +13,7 @@
   <header class="site-header">
     <div class="brand-bar">
       <a class="brand" href="../index.html">
-        <img src="../assets/img/becat-rojo-logo.png" alt="#BeCaT">
+        <img src="../assets/img/becat-rojo-logo.png" alt="BeCaT">
         <div>
           <strong>Herramientas CIC</strong>
           <span>Catequesis de Iniciación Cristiana en Familia</span>
@@ -37,6 +37,7 @@
         <h1>Reconocer a los adultos, descubrir colaboradores y comprometerse</h1>
         
         <p class="lead">De la reflexión personal al paso concreto de implicación</p>
+        <button class="pdf-button" type="button" data-print-tool data-pdf-title="herramienta-tema-03">Guardar herramienta en PDF</button>
       </div>
     </section>
     
@@ -104,7 +105,7 @@
     
   </main>
   <footer class="site-footer">
-    <p>Proyecto pastoral #BeCaT · Mini-sitio de herramientas para catequesis en familia</p>
+    <p>Proyecto pastoral BeCaT · Mini-sitio de herramientas para catequesis en familia</p>
   </footer>
   <script>
     const navSelect = document.getElementById("nav-select");
@@ -116,6 +117,20 @@
         }
       });
     }
+    const printButtons = document.querySelectorAll("[data-print-tool]");
+    printButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const originalTitle = document.title;
+        const pdfTitle = button.dataset.pdfTitle;
+        if (pdfTitle) {
+          document.title = pdfTitle;
+          window.addEventListener("afterprint", () => {
+            document.title = originalTitle;
+          }, { once: true });
+        }
+        window.print();
+      });
+    });
   </script>
 </body>
 </html>
